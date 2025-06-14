@@ -1,28 +1,388 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Привет! Это мой сайт</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weight In — Luxury Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Cormorant Garamond', serif;
+      background: black;
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .slider {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: slideShow 20s infinite ease-in-out;
+      transform: scale(1);
+    }
+
+    .slide:nth-child(1) {
+      background-image: url('1.jpeg');
+      animation-delay: 0s;
+    }
+
+    .slide:nth-child(2) {
+      background-image: url('2.jpeg');
+      animation-delay: 5s;
+    }
+
+    .slide:nth-child(3) {
+      background-image: url('3.jpeg');
+      animation-delay: 10s;
+    }
+
+    .slide:nth-child(4) {
+      background-image: url('4.jpeg');
+      animation-delay: 15s;
+    }
+
+    @keyframes slideShow {
+      0% { opacity: 0; transform: scale(1.03); }
+      5% { opacity: 1; transform: scale(1); }
+      25% { opacity: 1; transform: scale(1); }
+      30% { opacity: 0; transform: scale(1.02); }
+      100% { opacity: 0; transform: scale(1.02); }
+    }
+
+    .slider-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    header {
+      position: absolute;
+      top: 3%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    header img {
+      width: 380px;
+      filter: drop-shadow(0 0 25px #a785ff);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1.5s ease, transform 1.5s ease;
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    .hero-text.visible {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #e8dcff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(167, 133, 255, 0.3);
+    }
+
+    .hero-button {
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      background: transparent;
+      border: 2px solid #d9caff;
+      color: #d9caff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-button:hover {
+      background: #d9caff;
+      color: black;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      background: transparent;
+      border: 2px solid #d9caff;
+      color: #d9caff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .menu-panel {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 280px;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      padding: 60px 20px;
+      z-index: 99;
+      transition: left 0.4s ease;
+    }
+
+    .menu-panel.open {
+      left: 0;
+    }
+
+    .menu-panel a {
+      display: block;
+      color: #e8dcff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 20px 0;
+      transition: color 0.3s;
+    }
+
+    .menu-panel a:hover {
+      color: white;
+    }
+
+    .partner-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      background: #d9caff;
+      color: black;
+      padding: 10px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Cormorant Garamond', serif;
+      transition: all 0.3s ease;
+    }
+
+    .partner-button:hover {
+      background: white;
+    }
+
+    .video-section {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+    }
+
+    .video-section video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1.5s ease, transform 1.5s ease;
+      z-index: 10;
+    }
+
+    .video-text.visible {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    .video-text h1 {
+      font-size: 3rem;
+      color: #e8dcff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(167, 133, 255, 0.3);
+    }
+
+    .product-section {
+      background: black;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .product-section h2 {
+      font-size: 2.5rem;
+      color: #d9caff;
+      margin-bottom: 60px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .product {
+      width: 260px;
+      background: #111;
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(167, 133, 255, 0.3);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .product h3 {
+      font-size: 1.5rem;
+      color: #e8dcff;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Добро пожаловать!</h1>
-    <p>Это мой первый сайт</p>
-  </header>
+  <button class="menu-button" id="menuBtn">Меню</button>
+  <div class="menu-panel" id="menuPanel">
+    <a href="Index.html">Главная</a>
+    <a href="About us.html">О нас</a>
+    <a href="products.html">Продукты</a>
+    <a href="Contacts.html">Контакты</a>
+  </div>
+  <button class="partner-button">Стать партнёром</button>
 
-  <section class="about">
-    <h2>Обо мне</h2>
-    <p>Меня зовут Алекс. Я начинающий веб-разработчик.</p>
+  <section class="slider">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    
+    <div class="slider-content">
+      <header>
+        <img src="logo.webp" alt="Weight In Logo">
+      </header>
+
+      <div class="hero-text" id="heroText">
+        <h1>Beyond Innovation</h1>
+        <button class="hero-button" onclick="document.getElementById('video').scrollIntoView({ behavior: 'smooth' });">Explore Collection</button>
+      </div>
+    </div>
   </section>
 
-  <section class="contact">
-    <h2>Контакты</h2>
-    <p>Email: myemail@example.com</p>
+  <section class="video-section" id="video">
+    <video src="video.mp4" autoplay muted loop></video>
+    <div class="video-text" id="videoText">
+      <h1>Engineering Elegance</h1>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Алекс</p>
-  </footer>
+  <section class="product-section">
+    <h2>Our Creations</h2><div class="products">
+  <a class="product" href="product1.html">
+    <img src="images/product1.jpg" alt="Product 1">
+    <h3>Pizza Box Deluxe</h3>
+  </a>
+  <a class="product" href="product2.html">
+    <img src="images/product2.jpg" alt="Product 2">
+    <h3>Lunchbox Scale Pro</h3>
+  </a>
+  <a class="product" href="product3.html">
+    <img src="images/product3.jpg" alt="Product 3">
+    <h3>Quantum Lid</h3>
+  </a>
+  <a class="product" href="product4.html">
+    <img src="images/product4.jpg" alt="Product 4">
+    <h3>Space Tray Concept</h3>
+  </a>
+</div>
+    </div>
+  </section>
+
+  <script>
+    // Hero Text
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('heroText').classList.add('visible');
+      }, 2000);
+
+      setTimeout(() => {
+        document.getElementById('videoText').classList.add('visible');
+      }, 12000);
+    });
+
+    // Menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const menuPanel = document.getElementById('menuPanel');
+    menuBtn.addEventListener('click', () => {
+      menuPanel.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menuPanel.contains(e.target) && e.target !== menuBtn) {
+        menuPanel.classList.remove('open');
+      }
+    });
+  </script>
+
+<footer style="background: #0b0b0b; padding: 40px 0; text-align: center;">
+  <div style="margin-bottom: 20px;">
+    <a href="https://youtube.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/youtube.svg" alt="YouTube" width="30" />
+    </a>
+    <a href="https://facebook.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/facebook.svg" alt="Facebook" width="30" />
+    </a>
+    <a href="https://instagram.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/instagram.svg" alt="Instagram" width="30" />
+    </a>
+    <a href="https://linkedin.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/linkedin.svg" alt="LinkedIn" width="30" />
+    </a>
+    <a href="https://twitter.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/twitter.svg" alt="Twitter" width="30" />
+    </a>
+  </div>
+  <p style="color: #777; font-size: 0.9rem;">© 2025 Weight In. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
