@@ -34,12 +34,18 @@
     .slide {
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 100vh;
+      max-height: 100dvh; /* Учитывает безопасную зону на iOS Safari */
       background-size: cover;
       background-position: center;
       opacity: 0;
       animation: slideShow 20s infinite ease-in-out;
       transform: scale(1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     .slide:nth-child(1) {
@@ -207,8 +213,10 @@
 
     .video-section video {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
+      display: block;
+      max-height: 100dvh;
     }
 
     .video-text {
