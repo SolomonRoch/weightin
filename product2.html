@@ -1,0 +1,105 @@
+<!-- Пример: страница для Продукта 2 — Ланч-боксы с весами -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weight In — Ланч-боксы с весами</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: #0c0c0f;
+      color: #eaeaea;
+    }
+    .container {
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      max-width: 180px;
+      margin-bottom: 3rem;
+    }
+    .content {
+      display: flex;
+      max-width: 1200px;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .text {
+      flex: 1;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ccc;
+      text-shadow: 0 0 5px rgba(160, 160, 255, 0.1);
+    }
+    .images {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .images img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .images img:hover {
+      transform: scale(1.1);
+    }
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .button {
+      padding: 0.9rem 2rem;
+      background: linear-gradient(135deg, #6f6fdc, #aaa);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 0 15px rgba(100, 100, 255, 0.3);
+      text-decoration: none;
+      text-align: center;
+    }
+    .button:hover {
+      background: linear-gradient(135deg, #8e8ef0, #bbb);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Weight In Logo" class="logo">
+    <div class="content">
+      <div class="text">
+        <h1>Ланч-боксы с весами — Weight In</h1>
+        <p>
+          Умные ланч-боксы нового поколения. Сочетают эстетику, функциональность и технологии: встроенные весы моментально показывают точный вес еды, синхронизируются с приложением, подходят для спортсменов, диетологов, ресторанов и всех, кто заботится о питании и учете продуктов. Позволяют учитывать остатки, следить за БЖУ и создавать умную кухню в любых условиях.
+        </p>
+      </div>
+      <div class="images">
+        <img src="lunchbox1.jpg" alt="Lunchbox 1">
+        <img src="lunchbox2.jpg" alt="Lunchbox 2">
+        <img src="lunchbox3.jpg" alt="Lunchbox 3">
+        <img src="lunchbox4.jpg" alt="Lunchbox 4">
+      </div>
+    </div>
+    <div class="buttons">
+      <a href="#" class="button">Заказать прямо сейчас</a>
+      <a href="#" class="button">Получить полную презентацию</a>
+      <a href="index.html" class="button">Вернуться в меню</a>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- По аналогии можно сделать 2 другие страницы — интерактивный помощник и инновации под заказ. Хочешь, я их сразу тоже пропишу? -->
