@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Контакты – Weight In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #0b0b0d;
+      font-family: 'Cormorant Garamond', serif;
+      color: #eae3ff;
+    }
+
+    header {
+      padding: 40px 0 20px;
+      text-align: center;
+      background: #0b0b0d;
+    }
+
+    header img {
+      width: 200px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #c7b6ff;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 1.3rem;
+      color: #a58fff;
+      margin-bottom: 50px;
+    }
+
+    .contact-section {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px 100px;
+      text-align: center;
+      background: linear-gradient(145deg, #121217, #0b0b0d);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(168, 143, 255, 0.1);
+    }
+
+    .contact-info {
+      margin-bottom: 30px;
+    }
+
+    .contact-info h2 {
+      color: #d4c9ff;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      color: #bcaeff;
+    }
+
+    .contact-form {
+      text-align: left;
+      margin-top: 40px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: #1a1a1e;
+      border: 1px solid #3a3450;
+      padding: 15px;
+      color: #f5f0ff;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      font-family: inherit;
+    }
+
+    .contact-form button {
+      padding: 12px 30px;
+      background: #a58fff;
+      color: #0b0b0d;
+      border: none;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #c6b3ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      font-size: 0.9rem;
+      color: #716e82;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p.subtitle {
+        font-size: 1.1rem;
+      }
+
+      .contact-section {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Логотип и заголовок -->
+  <header>
+    <img src="logo.webp" alt="Weight In Logo">
+    <h1>Свяжитесь с нами</h1>
+    <p class="subtitle">Weight In – Инновационная компания будущего</p>
+  </header>
+
+  <!-- Контактный блок -->
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Наш адрес</h2>
+      <p>г. Технологии, Улица Идей 2025<br>Офис 4B, Инновационный Центр</p>
+    </div>
+
+    <div class="contact-info">
+      <h2>Электронная почта</h2>
+      <p>info@weightin.global</p>
+    </div>
+
+    <div class="contact-info">
+      <h2>Телефон</h2>
+      <p>+7 (999) 123‑45‑67</p>
+    </div>
+
+  <form action="https://formspree.io/f/mzzgwznd" method="POST" class="contact-form">
+  <input type="text" name="name" placeholder="Ваше имя" required>
+  <input type="email" name="email" placeholder="Ваш Email" required>
+  <textarea name="message" rows="6" placeholder="Ваше сообщение..." required></textarea>
+  <button type="submit">Отправить</button>
+</form>
+
+  </section>
+<footer style="background: #0b0b0b; padding: 40px 0; text-align: center;">
+  <div style="margin-bottom: 20px;">
+    <a href="https://youtube.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/youtube.svg" alt="YouTube" width="30" />
+    </a>
+    <a href="https://facebook.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/facebook.svg" alt="Facebook" width="30" />
+    </a>
+    <a href="https://instagram.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/instagram.svg" alt="Instagram" width="30" />
+    </a>
+    <a href="https://linkedin.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/linkedin.svg" alt="LinkedIn" width="30" />
+    </a>
+    <a href="https://twitter.com" target="_blank" style="margin: 0 15px;">
+      <img src="icons/twitter.svg" alt="Twitter" width="30" />
+    </a>
+  </div>
+  <footer>
+    © 2025 Weight In – Inventors Company. Все права защищены.
+  </footer>
+
+</body>
+</html>
